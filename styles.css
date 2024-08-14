@@ -1,3 +1,4 @@
+/* General Styles */
 html, body {
     margin: 0;
     padding: 0;
@@ -9,24 +10,20 @@ html, body {
     font-size: 12px;
 }
 
-/* Optional: Add additional styles in your CSS file if needed */
-#imageModal img {
-    width: 100%; /* Ensure images scale responsively */
-    height: auto;
-}
-
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    max-width: 1440px;
-    margin: 0 auto; /* Center the page content horizontally */
+    max-width: 1440px; /* Max width for desktop */
+    width: 100%; /* Full width until max-width is reached */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 24px; /* Optional: Padding to avoid touching the edges */
+    box-sizing: border-box; /* Include padding in the width */
 }
 
 header {
     padding: 20px 0;
     background-color: #EAE9E7;
-
     position: relative; /* Allow absolute positioning of the Instagram icon */
 }
 
@@ -41,6 +38,7 @@ header nav ul {
     margin: 0;
     padding: 0;
     width: 100%; /* Ensure ul takes the full width */
+    max-width: 684px;
     display: flex;
     justify-content: center; /* Center the ul content */
 }
@@ -74,81 +72,94 @@ h1 {
     bottom: 16px; /* Align with the bottom edge of the last drawing */
 }
 
-main {
-    flex-grow: 1; /* Allows main content to grow and take up available space */
-    padding: 120px 72px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Portfolio grid layout */
 .portfolio {
-    display: flex;
-    flex-wrap: wrap; /* Ensure items wrap to the next line as necessary */
-    justify-content: space-between;
-    row-gap: 10px;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 24px; /* Space between items */
+    width: 100%; /* Ensure the grid takes up the full width */
 }
-
-/* Portfolio Styles */
 
 .portfolio-item {
-    /*margin-bottom: 24px; /* Space between portfolio items */
-    width: 100%; /* Full width by default */
+    box-sizing: border-box; /* Include padding/margins in the width */
 }
 
 .portfolio-item img {
-    width: 100%; /* Full width for flexibility */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover;
-    display: block;
-   
+    width: 100%; /* Make images responsive */
+    height: auto;
+    object-fit: cover; /* Maintain aspect ratio */
 }
 
-/* Desktop View */
-@media only screen and (min-width: 768px) {
-    .portfolio {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 items per row */
-        row-gap: 10px;
-        gap: 24px;
-    }
-
-    .portfolio-item img {
-        width: 100%; /* Fill the grid column width */
-        height: auto; /* Maintain aspect ratio */
-        max-width: 306px; /* Max width constraint */
-        max-height: 383px; /* Max height constraint */
-    }
+.portfolio-item p {
+    margin: 0;
+    font-size: 12px;
+    color: #555968;
+    text-align: left; /* Align text under the image */
 }
 
 /* Mobile View */
 @media only screen and (max-width: 767px) {
     .portfolio {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Two items per row */
-        row-gap: 10px;
-        gap: 24px;
-    }
-
-    .portfolio-item img {
-        width: 144px;
-        height: 180px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
     }
 }
-.portfolio-item p {
-    margin: 0;
-    font-size: 12px;
-    color: #555968;
-    text-align: left; /* Center the text under the image */
-}
 
+/* Sticky footer */
 footer {
     text-align: center;
-    font-size: 10px; /* Smaller font size for copyright text */
+    font-size: 10px;
     padding: 20px 0;
     color: #555968;
     background-color: #EAE9E7;
-    width: 100%; /* Ensure the footer spans the full width */
-    margin-top: auto; /* Push the footer to the bottom of the container */
+    width: 100%;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Override conflicting media queries */
+@media only screen and (min-width: 48em) {
+    .container {
+        width: 100% !important; /* Ensure full width */
+        max-width: 1440px !important; /* Set the maximum width */
+    }
+}
+
+@media only screen and (min-width: 62em) {
+    .container {
+        width: 100% !important;
+        max-width: 1440px !important;
+    }
+}
+
+@media only screen and (min-width: 75em) {
+    .container {
+        width: 100% !important;
+        max-width: 1440px !important;
+    }
+}
+
+
+/* Portfolio Item Page Specific Styles */
+.portfolio-item-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the image and text */
+    margin: 0 auto;
+    padding: 24px 24px; /* Space around the content */
+    max-width: 100%; /* Full width by default */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.portfolio-item-page img {
+    max-width: 636px; /* Max width for desktop */
+    max-height: 819px; /* Max height for desktop */
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 16px; /* Space between image and text */
+}
+
+.portfolio-item-page p {
+    font-size: 16px; /* Adjust as needed */
+    color: #555968;
+    text-align: center; /* Center the text under the image */
+    margin: 0;
 }
