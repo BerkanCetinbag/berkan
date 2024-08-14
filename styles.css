@@ -1,0 +1,115 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAE9E7; /* Page background color */
+    color: #555968; /* Font color */
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align items horizontally */
+    padding: 20px 0;
+    background-color: #EAE9E7;
+    width: 100%;
+    position: relative; /* Allow absolute positioning of the Instagram icon */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Space out the links */
+    width: 100%;
+    max-width: 400px; /* Optional: limit max width for alignment */
+    margin-bottom: 10px; /* Space between nav and title */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Distribute links horizontally */
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555968;
+}
+
+h1 {
+    font-size: 24px; /* Adjust font size as needed */
+    text-align: center;
+    margin: 0;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('instagram.png'); /* Correct path to Instagram icon */
+    background-size: cover;
+    position: absolute;
+    right: 72px; /* Align with the right edge of the content */
+    bottom: 16px; /* Align with the bottom edge of the last drawing */
+}
+
+main {
+    flex-grow: 1; /* Allows main content to grow and take up available space */
+    padding: 120px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(4, 306px); /* Four columns of 306px width */
+    grid-column-gap: 24px; /* 24px horizontal gap only */
+    grid-row-gap: 0px; /* No vertical gap */
+}
+
+.portfolio-item {
+    width: 306px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 383px; /* Image height */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0; /* No gap between the image and text */
+}
+
+.portfolio-item p {
+    margin: 0;
+    height: 24px; /* Fixed height for title */
+    font-size: 12px;
+    color: #555968;
+    text-align: left; /* Align text to the left */
+    line-height: 24px; /* Center text vertically in the title area */
+}
+
+footer {
+    text-align: center;
+    font-size: 10px; /* Smaller font size for copyright text */
+    padding: 20px 0;
+    color: #555968;
+    background-color: #EAE9E7;
+    width: 100%; /* Ensure the footer spans the full width */
+    margin-top: auto; /* Push the footer to the bottom of the container */
+}
