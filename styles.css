@@ -17,7 +17,8 @@ html, body {
     max-width: 1440px; /* Max width for desktop */
     width: 100%; /* Full width until max-width is reached */
     margin: 0 auto; /* Center the container horizontally */
-    padding: 0 24px; /* Optional: Padding to avoid touching the edges */
+    padding: 24px; /* Optional: Padding to avoid touching the edges */
+    padding-bottom: 0;
     box-sizing: border-box; /* Include padding in the width */
 }
 
@@ -46,6 +47,7 @@ header nav ul {
 header nav ul li {
     width: 50%; /* Each list item takes 50% of the width */
     text-align: center; /* Center the content inside each li */
+    max-width: 165px;
 }
 
 header nav ul li a {
@@ -80,6 +82,7 @@ h1 {
     grid-column-gap: 24px; /* 24px gap between columns */
     grid-row-gap: 10px; /* 10px gap between rows */
     width: 100%; /* Ensure the grid takes up the full width */
+    padding-top: 24px;
 }
 
 .portfolio-item {
@@ -116,8 +119,8 @@ footer {
     background-color: #EAE9E7;
     width: 100%;
     margin-top: auto; /* Push the footer to the bottom */
-    padding-bottom: 0;
-    padding-top: 48px;
+    padding-bottom: 14px;
+    padding-top: 82px;
     border: 0;
 }
 
@@ -156,19 +159,34 @@ footer {
 }
 
 .portfolio-item-page img {
-    max-width: 636px; /* Max width for desktop */
-    max-height: 795px; /* Max height for desktop */
+    max-width: 684px; /* Max width for desktop */
+    max-height: 855px; /* Max height for desktop */
     width: 100%; /* Make the image responsive */
     height: auto; /* Maintain aspect ratio */
     margin: 0;
+    padding-top: 24px;
 }
 
-.portfolio-item-page p {
+.text-container {
+    display: flex;
+    justify-content: space-between; /* Spread the content across the container */
+    width: 100%; /* This will make the container the full width of its parent */
+    max-width: 684px; /* Optional: Set a maximum width for larger screens */
+    box-sizing: border-box;
+    margin-top: 0; /* Space between the image and text */
+}
+
+.left-text, .right-text {
     font-size: 12px; /* Adjust as needed */
     color: #555968;
+}
+
+.left-text {
     text-align: left;
-    margin: 0;
-    max-width: 636px;
+}
+
+.right-text {
+    text-align: right;
 }
 
 /* Portfolio About Me Page Specific Styles */
@@ -183,11 +201,12 @@ footer {
 }
 
 .portfolio-about-page img {
-    max-width: 306px; /* Max width for desktop */
-    max-height: 795px; /* Max height for desktop */
+    max-width: 330px; /* Max width for desktop */
+    max-height: 412.5px; /* Max height for desktop */
     width: 100%; /* Make the image responsive */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 24px; /* Space between image and text */
+    padding-top: 24px;
 }
 
 .portfolio-about-page p {
@@ -195,5 +214,7 @@ footer {
     color: #555968;
     text-align: justify; /* Justify the text within the element */
     margin: 0;
-    max-width: 306px;
+    max-width: 330px;
+    max-height: 412.5px; /* Max height for desktop */
+    padding-bottom: 15px;
 }
